@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flocus WORLDSITE</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+  <div class="container" style="position: relative;">
+    
+    <!-- Theme toggle button -->
+    <button id="themeBtn" class="theme-btn">💡</button>
+
+    <!-- Theme selection modal -->
+    <div id="themeBox" class="theme-box">
+      <h2 style="margin: 0 0 8px 0; font-size: 18px; color: black;">Theme</h2><hr><br>
+
+      <div class="theme-category">
+        <h3 style="margin-bottom: 6px; color: black;">Aura Theme</h3>
+        <div class="theme-images" style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <img src="https://picsum.photos/id/1015/100/60" alt="Aura 1" class="theme-img" />
+          <img src="https://picsum.photos/id/1016/100/60" alt="Aura 2" class="theme-img" />
+          <img src="https://picsum.photos/id/1018/100/60" alt="Aura 3" class="theme-img" />
+          <img src="https://picsum.photos/id/1020/100/60" alt="Aura 4" class="theme-img" />
+        </div>
+      </div> <hr>
+
+      <div class="theme-category" style="margin-top: 12px;">
+        <h3 style="margin-bottom: 6px; color: black;">Nature Theme</h3>
+        <div class="theme-images" style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <img src="https://picsum.photos/id/1024/100/60" alt="Nature 1" class="theme-img" />
+          <img src="https://picsum.photos/id/1025/100/60" alt="Nature 2" class="theme-img" />
+          <img src="https://picsum.photos/id/1027/100/60" alt="Nature 3" class="theme-img" />
+          <img src="https://picsum.photos/id/1031/100/60" alt="Nature 4" class="theme-img" />
+          <img src="https://picsum.photos/id/1032/100/60" alt="Nature 5" class="theme-img" />
+          <img src="https://picsum.photos/id/1033/100/60" alt="Nature 6" class="theme-img" />
+        </div>
+      </div>
+    </div>
+
+    <div class="logo"><span>Hey User!</span></div>
+    <div class="question" id="current-task">What do you want to focus on?</div>
+
+    <div class="options">
+      <div class="option active">Focus</div>
+      <div class="option">Short Break</div>
+      <div class="option">Long Break</div>
+    </div>
+
+    <div class="timer">25:00</div>
+
+    <div class="button-container">
+      <button class="start-btn">Start</button>
+      <button class="reset-btn">Reset</button>
+    </div>
+
+    <div class="quote">"Hard work beats talent when talent doesn't work hard"</div>
+
+    <button class="start-btn" id="manageTasksBtn">🗂️ Manage Tasks</button>
+  </div>
+
+  <!-- Task Modal -->
+  <div class="modal" id="taskModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📝 Manage Tasks</h2>
+        <button class="close-btn" id="closeTaskModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="tasks-container">
+          <h2>Focus Priorities</h2>
+          <p><b>Set your priorities for the day</b></p>
+          <div class="task-list" id="task-list"></div>
+          <button class="add-task-btn" id="add-task-btn">+ Add Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alarm Sound -->
+  <audio id="alarmSound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Alert -->
+  <div id="customAlert" style="
+    display: none;
+    position: fixed; 
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    padding: 20px 30px;
+    z-index: 9999;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    width: 320px;
+  ">
+    <p style="font-size: 1.2em; margin-bottom: 15px; color: black;">⏰ Time’s up, Take a break or get back to slaying your goals!</p>
+    <button id="closeAlertBtn" style="
+      background: #ff3b3b;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    ">Close</button>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
