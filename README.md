@@ -21,7 +21,7 @@ JavaScript
 📸 Screenshots
 
 🏠 Home Page
-![Home Page](images/homepage.png)
+![Home Page](images/Homepage.png)
 
 ✅ Task Management
 ![Task Management](images/task.png)
